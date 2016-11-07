@@ -1,0 +1,46 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Basic Example</title>
+    <script src="react-0.14.2/build/react.js"></script>
+    <script src="react-0.14.2/build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="content" align="center"></div>
+
+    <script type="text/babel">
+
+      var Custom = React.createClass({
+
+        showCustomAlert: function() {
+
+          alert("Alert message: " + this.props.children);
+
+        },
+
+        render: function () {
+          return (
+
+            <div>  
+              <h2>Hello World!</h2>
+              <p>My name is {this.props.name}</p>
+              <a onClick={this.showCustomAlert} href="#">Click me</a>
+            </div>
+
+          );
+        }
+
+      });
+
+      ReactDOM.render( 
+          <div>
+
+            <Custom name="Jan">This is a custom alert message</Custom>
+
+        </div>, document.getElementById('content') );
+
+    </script>
+  </body>
+  </html>
